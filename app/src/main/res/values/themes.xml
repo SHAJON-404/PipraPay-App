@@ -1,0 +1,294 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.MyApplication" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/main_color</item>
+        <item name="colorPrimaryVariant">@color/main_color</item>
+        <item name="colorOnPrimary">@color/main_color</item>
+        <item name="colorSecondary">@color/main_color</item>
+        <item name="colorSecondaryVariant">@color/main_color</item>
+        <item name="colorOnSecondary">@color/main_color</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="23">true</item>
+        <item name="android:statusBarColor" tools:targetApi="l">#F7F9F8</item>
+    </style>
+
+    <style name="Theme.MyApp.Splash" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/main_color</item>
+        <item name="colorPrimaryVariant">@color/main_color</item>
+        <item name="colorOnPrimary">@color/main_color</item>
+        <item name="colorSecondary">@color/main_color</item>
+        <item name="colorSecondaryVariant">@color/main_color</item>
+        <item name="colorOnSecondary">@color/main_color</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="23">false</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/main_color</item>
+        <item name="android:navigationBarColor" tools:targetApi="l">@color/main_color</item>
+    </style>
+
+
+    <style name="titleText">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="editTextTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/edit_text_bg_pi</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="android:textColor">@color/blue</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:padding">16dp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColorHint">@color/secondText</item>
+    </style>
+
+    <style name="buttonTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/ripple_btn_pi</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="AppTheme.Spinner" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:padding">2dp</item>
+    </style>
+
+
+
+    <style name="editTextTask">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/txtBlackTask</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:background">@drawable/edit_text_bg_task</item>
+        <item name="android:drawableStart">@drawable/ic_email_task</item>
+        <item name="android:drawablePadding">8dp</item>
+        <item name="android:padding">15dp</item>
+        <item name="android:textColorHint">#979797</item>
+    </style>
+
+    <style name="buttonThemeTask">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">18dp</item>
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:background">@drawable/button_bg_task</item>
+    </style>
+
+   <style name="Medium24Task">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/txtBlackTask</item>
+    </style>
+
+    <style name="Medium14Task">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/darkGrayTask</item>
+    </style>
+
+   <style name="Medium12Task">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/txtGrayTask</item>
+    </style>
+
+    <style name="SemiBold12Task">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/darkGrayTask</item>
+    </style>
+
+    <style name="SemiBold14Task">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/txtBlackTask</item>
+    </style>
+
+    <style name="SemiBold16Task">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/txtBlackTask</item>
+    </style>
+
+    <style name="regular12Task">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#BEC0C7</item>
+    </style>
+
+
+
+    <style name="buttonThemeCourse">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">19dp</item>
+        <item name="fontFamily">@font/outfit_medium</item>
+        <item name="android:background">@drawable/button_bg_course</item>
+    </style>
+
+    <style name="editTextCourse">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/txtBlack</item>
+        <item name="fontFamily">@font/outfit_regular</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:padding">13dp</item>
+        <item name="android:background">@drawable/edit_text_bg_course</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:drawablePadding">12dp</item>
+        <item name="android:drawableStart">@drawable/ic_mail_course</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColorHint">@color/gray</item>
+    </style>
+
+    <style name="headLine1Semi22">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/txtBlack</item>
+        <item name="fontFamily">@font/outfit_semi_bold</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="semiBold14">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/txtBlack</item>
+        <item name="fontFamily">@font/outfit_semi_bold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="semiBold16">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/txtBlack</item>
+        <item name="fontFamily">@font/outfit_semi_bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="semiBold18">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/txtBlack</item>
+        <item name="fontFamily">@font/outfit_semi_bold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="regular14">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="fontFamily">@font/outfit_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:lineSpacingExtra">5dp</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="regular12">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="fontFamily">@font/outfit_regular</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:lineSpacingExtra">5dp</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="medium12">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/blueCourse</item>
+        <item name="fontFamily">@font/outfit_medium</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="medium16">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/txtBlack</item>
+        <item name="fontFamily">@font/outfit_medium</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+
+    <style name="roundImage">
+        <item name="cornerSize">50%</item>
+        <item name="cornerFamily">rounded</item>
+    </style>
+
+    <style name="circleRound">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+   <style name="cornerRadius35">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">35%</item>
+    </style>
+
+</resources>
