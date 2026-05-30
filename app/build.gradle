@@ -3,7 +3,6 @@ apply plugin: 'com.android.application'
 android {
     namespace "com.qube.piprapay_tool"
     compileSdk 33
-    buildToolsVersion "1.1.0"
 
     defaultConfig {
         applicationId "com.qube.piprapay_tool"
@@ -24,6 +23,9 @@ android {
     }
     compileOptions {
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        buildConfig = true
     }
 
 }

@@ -1,33 +1,87 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fadeScrollbars="false">
+    android:background="@color/activityBgTask"
+    android:padding="16dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_clear_logs"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:background="@drawable/button_bg_task"
+        android:backgroundTint="@color/main_color"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        android:text="Clear Logs"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textAllCaps="false"
+        android:paddingHorizontal="15dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_export_logs"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/button_bg_task"
+        android:backgroundTint="@color/main_color"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        android:text="Export Logs"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textAllCaps="false"
+        android:paddingHorizontal="15dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_clear_logs" />
+
+    <TextView
+        android:id="@+id/log_title"
+        style="@style/semiBold18"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="4dp"
-        android:scrollbars="vertical">
+        android:text="Activity Logs"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btn_clear_logs"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_clear_logs" />
 
-        <TextView
-            android:id="@+id/syslogs_version"
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="10dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/log_title">
+
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="16dp"
-            android:textColor="@color/colorPrimary"
-            android:text=""
-            android:layout_marginLeft="12dp" />
+            android:layout_height="match_parent"
+            android:background="#1E1E1E"
+            android:padding="12dp">
 
-        <TextView
-            android:id="@+id/syslogs_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="16dp"
-            android:text=""
-            android:layout_marginLeft="12dp" />
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    </LinearLayout>
-</ScrollView>
+                <TextView
+                    android:id="@+id/syslogs_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="monospace"
+                    android:text="No logs available."
+                    android:textColor="#80FF80"
+                    android:textSize="13sp"
+                    android:scrollHorizontally="true" />
+            </HorizontalScrollView>
+        </ScrollView>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

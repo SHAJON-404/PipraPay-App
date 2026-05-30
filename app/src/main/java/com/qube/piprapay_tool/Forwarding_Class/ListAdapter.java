@@ -87,7 +87,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
         String any = context.getString(R.string.any);
         holder.sender.setText(senderText.equals(asterisk) ? any : senderText);
 
-        holder.url.setText(config.getUrl());
+        holder.url.setText((position + 1) + ". " + config.getUrl());
         holder.template.setText(config.getTemplate());
         holder.headers.setText(config.getHeaders());
 
@@ -119,7 +119,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
             builder.setMessage(message);
 
             builder.setPositiveButton(R.string.btn_delete, (dialog, id) -> {
-                String hook_url = holder.url.getText().toString().trim();
+                String hook_url = config.getUrl();
 
                 StringRequest stringRequest = new StringRequest(com.android.volley.Request.Method.POST, hook_url,
                         response -> {

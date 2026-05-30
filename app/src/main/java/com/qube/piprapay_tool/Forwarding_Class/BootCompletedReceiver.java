@@ -6,10 +6,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 
+import android.content.SharedPreferences;
+
 public class BootCompletedReceiver extends BroadcastReceiver {
     @SuppressLint("UnsafeProtectedBroadcastReceiver")
     @Override
     public void onReceive(Context context, Intent argIntent) {
+        SharedPreferences sharedPref = context.getSharedPreferences("my_preferences", Context.MODE_PRIVATE);
+        boolean isEnabled = sharedPref.getBoolean("background_task_enabled", false);
+        if (!isEnabled) {
+            return;
+        }
+
         Intent intent = new Intent(context, SmsReceiverService.class);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             context.startForegroundService(intent);

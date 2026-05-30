@@ -14,6 +14,7 @@ import androidx.work.OneTimeWorkRequest;
 import androidx.work.WorkManager;
 import androidx.work.WorkRequest;
 
+import com.qube.piprapay_tool.Class.AppLogger;
 import com.qube.piprapay_tool.R;
 
 import java.util.ArrayList;
@@ -82,6 +83,8 @@ public class SmsBroadcastReceiver extends BroadcastReceiver {
 
     protected void callWebHook(ForwardingConfig config, String sender, String slotName,
                                String content, long timeStamp) {
+
+        AppLogger.logRow(this.context, "SMS", config.getUrl(), "RCV/FWD: " + sender + " (" + slotName + ")");
 
         String message = config.prepareMessage(sender, content, slotName, timeStamp);
 

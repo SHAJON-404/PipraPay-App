@@ -27,6 +27,11 @@
             layout="@layout/main_layout_home" />
 
         <include
+            android:id="@+id/layout_logs"
+            android:visibility="gone"
+            layout="@layout/syslogs" />
+
+        <include
             android:id="@+id/layout_settings"
             android:visibility="gone"
             layout="@layout/main_layout_settings" />
@@ -37,12 +42,12 @@
         android:id="@+id/btn_add"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:layout_marginBottom="-25dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="70dp"
         android:src="@drawable/ic_add_orange_task"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
         android:elevation="5dp"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -71,9 +76,19 @@
         </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/relativeLog"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:padding="13dp">
+
+            <ImageView
+                android:id="@+id/logsImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_logs"
+                app:tint="#A7AEC1" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -90,7 +105,6 @@
                 android:layout_centerInParent="true"
                 android:src="@drawable/ic_event_unselect_task" />
         </RelativeLayout>
-
 
     </LinearLayout>
 

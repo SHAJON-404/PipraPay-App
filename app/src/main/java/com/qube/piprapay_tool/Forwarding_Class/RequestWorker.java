@@ -6,6 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.work.Worker;
 import androidx.work.WorkerParameters;
 
+import com.qube.piprapay_tool.Class.AppLogger;
+
 public class RequestWorker extends Worker {
 
     public final static String DATA_URL = "URL";
@@ -25,12 +27,13 @@ public class RequestWorker extends Worker {
     @Override
     public Result doWork() {
         int maxRetries = getInputData().getInt(DATA_MAX_RETRIES, 10);
+        String url = getInputData().getString(DATA_URL);
 
         if (getRunAttemptCount() > maxRetries) {
+            AppLogger.logRow(getApplicationContext(), "SMS", url, "FAILED (Max retries)");
             return Result.failure();
         }
 
-        String url = getInputData().getString(DATA_URL);
         String text = getInputData().getString(DATA_TEXT);
         String headers = getInputData().getString(DATA_HEADERS);
         boolean ignoreSsl = getInputData().getBoolean(DATA_IGNORE_SSL, false);
@@ -44,13 +47,16 @@ public class RequestWorker extends Worker {
         String result = request.execute();
 
         if (result.equals(Request.RESULT_RETRY)) {
+            AppLogger.logRow(getApplicationContext(), "SMS", url, "FAILED (Will retry)");
             return Result.retry();
         }
 
         if (result.equals(Request.RESULT_ERROR)) {
+            AppLogger.logRow(getApplicationContext(), "SMS", url, "FAILED");
             return Result.failure();
         }
 
+        AppLogger.logRow(getApplicationContext(), "SMS", url, "SUCCESS");
         return Result.success();
     }
 }

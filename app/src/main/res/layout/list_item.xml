@@ -8,8 +8,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:layout_marginVertical="5dp"
+        android:padding="16dp"
+        android:layout_marginVertical="8dp"
         android:background="@drawable/subscription_plan_unselect_course"
 
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,7 +32,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginHorizontal="5dp"
+            android:layout_marginHorizontal="8dp"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/linearLayout3"
@@ -48,6 +48,8 @@
                 android:id="@+id/text_url"
                 style="@style/SemiBold14Task"
                 android:textSize="12dp"
+                android:maxLines="1"
+                android:ellipsize="end"
                 android:text="https://merchant.qubeplug.com" />
         </LinearLayout>
         <LinearLayout
@@ -66,7 +68,7 @@
                 android:text="@string/btn_on"
                 android:textColor="#000"
                 android:textSize="14sp"
-                android:layout_marginRight="5dp"/>
+                android:layout_marginRight="8dp"/>
 
             <androidx.appcompat.widget.AppCompatCheckBox
                 android:id="@+id/switch_sms_on_off"
@@ -80,7 +82,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right|top"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/sms_on_off_LinearLayout">
@@ -97,7 +99,7 @@
                 android:id="@+id/delete_button"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="20dp"
                 android:src="@drawable/remove_session_tube" />
 
         </LinearLayout>

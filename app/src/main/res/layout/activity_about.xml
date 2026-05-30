@@ -1,0 +1,910 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/activityBgTask">
+
+    <!-- Clean Header Bar -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header_bar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:padding="12dp"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="@color/black1F"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/header_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="About Us"
+            android:textColor="@color/black1F"
+            android:fontFamily="@font/outfit_semi_bold"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/btn_back"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="8dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Subtle separator below header -->
+    <View
+        android:id="@+id/header_separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E5E7EB"
+        app:layout_constraintTop_toBottomOf="@+id/header_bar"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/header_separator"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="3dp"
+                app:cardUseCompatPadding="true"
+                app:strokeWidth="1dp"
+                app:strokeColor="#E5E7EB"
+                app:cardBackgroundColor="@color/white"
+                android:layout_marginBottom="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="24dp">
+
+                    <!-- Modern Logo Badge -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        app:cardCornerRadius="45dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0dp"
+                        app:cardBackgroundColor="#EAF7F1"
+                        android:layout_marginBottom="16dp">
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/piprapay"
+                            android:scaleType="centerCrop"
+                            app:shapeAppearance="@style/circleRound"
+                            android:layout_gravity="center"/>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PipraPay RW"
+                        android:fontFamily="@font/outfit_semi_bold"
+                        android:textSize="24sp"
+                        android:textColor="@color/black1F"
+                        android:layout_marginBottom="6dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="v1.1.1 (Rewrite)"
+                        android:fontFamily="@font/outfit_medium"
+                        android:textSize="12sp"
+                        android:textColor="@color/main_color"
+                        android:background="@drawable/bg_badge_green"
+                        android:paddingHorizontal="14dp"
+                        android:paddingVertical="5dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card 2: Rewrite Section Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="3dp"
+                app:cardUseCompatPadding="true"
+                app:strokeWidth="1dp"
+                app:strokeColor="#E5E7EB"
+                app:cardBackgroundColor="@color/white"
+                android:layout_marginBottom="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DEVELOPER DETAILS"
+                        android:fontFamily="@font/outfit_medium"
+                        android:textSize="11sp"
+                        android:textColor="#9CA4AB"
+                        android:letterSpacing="0.1"
+                        android:layout_marginBottom="12dp"/>
+
+                    <!-- Author Sub-section -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <!-- Initials Profile Avatar -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="52dp"
+                            android:layout_height="52dp"
+                            app:cardCornerRadius="26dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp"
+                            app:cardBackgroundColor="#EAF7F1">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="SS"
+                                android:fontFamily="@font/outfit_semi_bold"
+                                android:textSize="18sp"
+                                android:textColor="@color/main_color"
+                                android:layout_gravity="center"/>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_weight="1"
+                            android:layout_marginStart="14dp">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="S. SHAJON"
+                                android:fontFamily="@font/outfit_semi_bold"
+                                android:textSize="18sp"
+                                android:textColor="@color/black1F"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Lead Rewrite Developer"
+                                android:fontFamily="@font/outfit_regular"
+                                android:textSize="13sp"
+                                android:textColor="#78828A"
+                                android:layout_marginTop="2dp"/>
+                        </LinearLayout>
+
+                        <!-- GitHub Profile Link -->
+                        <LinearLayout
+                            android:id="@+id/github_layout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:background="@drawable/bg_badge_green"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="5dp">
+
+                            <ImageView
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:src="@drawable/github"
+                                app:tint="@color/main_color"
+                                android:layout_marginEnd="4dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="SHAJON-404"
+                                android:fontFamily="@font/outfit_medium"
+                                android:textSize="11sp"
+                                android:textColor="@color/main_color"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <!-- Warning Alert Banner -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:background="@drawable/bg_warning_alert"
+                        android:padding="12dp"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center_vertical">
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/warning"
+                            app:tint="#DC2626"
+                            android:layout_marginEnd="10dp"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="This is an independent rewrite (RW) version of PipraPay. The original developers are not associated with this rewrite and will not provide support or help."
+                            android:fontFamily="@font/outfit_regular"
+                            android:textSize="12sp"
+                            android:textColor="#991B1B"
+                            android:lineSpacingMultiplier="1.1"/>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#F3F4F6"
+                        android:layout_marginVertical="16dp"/>
+
+                    <!-- Rewrite Project Sub-section -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="REWRITE PROJECT INFO"
+                        android:fontFamily="@font/outfit_medium"
+                        android:textSize="11sp"
+                        android:textColor="#9CA4AB"
+                        android:letterSpacing="0.1"
+                        android:layout_marginBottom="12dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="16dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Technology Stack: "
+                            android:fontFamily="@font/outfit_regular"
+                            android:textSize="14sp"
+                            android:textColor="#78828A"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Next.js"
+                            android:fontFamily="@font/outfit_semi_bold"
+                            android:textSize="12sp"
+                            android:textColor="@color/main_color"
+                            android:background="@drawable/bg_badge_green"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="4dp"
+                            android:layout_marginStart="4dp"/>
+                    </LinearLayout>
+
+                    <!-- Rewrite GitHub Link Button -->
+                    <LinearLayout
+                        android:id="@+id/link_rw_github"
+                        android:layout_width="match_parent"
+                        android:layout_height="46dp"
+                        android:orientation="horizontal"
+                        android:gravity="center"
+                        android:background="@drawable/button_bg_task"
+                        android:backgroundTint="@color/main_color"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:foreground="?android:attr/selectableItemBackground">
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:src="@drawable/github"
+                            app:tint="@color/white"
+                            android:layout_marginEnd="8dp"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="GitHub Repository"
+                            android:fontFamily="@font/outfit_medium"
+                            android:textSize="14sp"
+                            android:textColor="@color/white"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Card 3: Original Section Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="3dp"
+                app:cardUseCompatPadding="true"
+                app:strokeWidth="1dp"
+                app:strokeColor="#E5E7EB"
+                app:cardBackgroundColor="@color/white"
+                android:layout_marginBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ORIGINAL PROJECT INFO"
+                        android:fontFamily="@font/outfit_medium"
+                        android:textSize="11sp"
+                        android:textColor="#9CA4AB"
+                        android:letterSpacing="0.1"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginBottom="16dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Technology Stack: "
+                            android:fontFamily="@font/outfit_regular"
+                            android:textSize="14sp"
+                            android:textColor="#78828A"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PHP"
+                            android:fontFamily="@font/outfit_semi_bold"
+                            android:textSize="12sp"
+                            android:textColor="#4B5563"
+                            android:background="@drawable/bg_badge_gray"
+                            android:paddingHorizontal="10dp"
+                            android:paddingVertical="4dp"
+                            android:layout_marginStart="4dp"/>
+                    </LinearLayout>
+
+                    <!-- Original Buttons -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        android:layout_marginBottom="16dp">
+
+                        <!-- Original Website Link Button -->
+                        <LinearLayout
+                            android:id="@+id/link_orig_web"
+                            android:layout_width="0dp"
+                            android:layout_height="42dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:gravity="center"
+                            android:background="@drawable/button_bg_task"
+                            android:backgroundTint="#0085FF"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:layout_marginEnd="6dp"
+                            android:foreground="?android:attr/selectableItemBackground">
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/link"
+                                app:tint="@color/white"
+                                android:layout_marginEnd="6dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Website"
+                                android:fontFamily="@font/outfit_medium"
+                                android:textSize="13sp"
+                                android:textColor="@color/white"/>
+                        </LinearLayout>
+
+                        <!-- Original GitHub Link Button -->
+                        <LinearLayout
+                            android:id="@+id/link_orig_github"
+                            android:layout_width="0dp"
+                            android:layout_height="42dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal"
+                            android:gravity="center"
+                            android:background="@drawable/button_bg_task"
+                            android:backgroundTint="#333333"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:layout_marginStart="6dp"
+                            android:foreground="?android:attr/selectableItemBackground">
+                            <ImageView
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:src="@drawable/github"
+                                app:tint="@color/white"
+                                android:layout_marginEnd="6dp"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Repository"
+                                android:fontFamily="@font/outfit_medium"
+                                android:textSize="13sp"
+                                android:textColor="@color/white"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#F3F4F6"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- Original Developers List Title -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ORIGINAL PROJECT DEVELOPERS"
+                        android:fontFamily="@font/outfit_medium"
+                        android:textSize="11sp"
+                        android:textColor="#9CA4AB"
+                        android:letterSpacing="0.1"
+                        android:layout_marginBottom="16dp"/>
+
+                    <!-- Team grid: 2 columns, 4 rows -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <!-- Row 1 -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2"
+                            android:paddingVertical="8dp">
+
+                            <!-- Dev 1 -->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginEnd="8dp">
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="38dp"
+                                    android:layout_height="38dp"
+                                    app:cardCornerRadius="19dp"
+                                    app:cardElevation="0dp"
+                                    app:strokeWidth="0dp"
+                                    app:cardBackgroundColor="#F3F4F6">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="MS"
+                                        android:fontFamily="@font/outfit_semi_bold"
+                                        android:textSize="12sp"
+                                        android:textColor="#4B5563"
+                                        android:layout_gravity="center"/>
+                                </com.google.android.material.card.MaterialCardView>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginStart="10dp">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Mouzh H. Shad"
+                                        android:fontFamily="@font/outfit_semi_bold"
+                                        android:textSize="13sp"
+                                        android:textColor="@color/black1F"/>
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Lead Developer"
+                                        android:fontFamily="@font/outfit_regular"
+                                        android:textSize="11sp"
+                                        android:textColor="#78828A"
+                                        android:layout_marginTop="1dp"/>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <!-- Dev 2 -->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginStart="8dp">
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="38dp"
+                                    android:layout_height="38dp"
+                                    app:cardCornerRadius="19dp"
+                                    app:cardElevation="0dp"
+                                    app:strokeWidth="0dp"
+                                    app:cardBackgroundColor="#F3F4F6">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="RP"
+                                        android:fontFamily="@font/outfit_semi_bold"
+                                        android:textSize="12sp"
+                                        android:textColor="#4B5563"
+                                        android:layout_gravity="center"/>
+                                </com.google.android.material.card.MaterialCardView>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginStart="10dp">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Rezaul Parvez"
+                                        android:fontFamily="@font/outfit_semi_bold"
+                                        android:textSize="13sp"
+                                        android:textColor="@color/black1F"/>
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Support &amp; Community"
+                                        android:fontFamily="@font/outfit_regular"
+                                        android:textSize="11sp"
+                                        android:textColor="#78828A"
+                                        android:layout_marginTop="1dp"/>
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#F9FAFB"/>
+
+                        <!-- Row 2 -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2"
+                            android:paddingVertical="8dp">
+
+                            <!-- Dev 3 -->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginEnd="8dp">
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="38dp"
+                                    android:layout_height="38dp"
+                                    app:cardCornerRadius="19dp"
+                                    app:cardElevation="0dp"
+                                    app:strokeWidth="0dp"
+                                    app:cardBackgroundColor="#F3F4F6">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="AB"
+                                        android:fontFamily="@font/outfit_semi_bold"
+                                        android:textSize="12sp"
+                                        android:textColor="#4B5563"
+                                        android:layout_gravity="center"/>
+                                </com.google.android.material.card.MaterialCardView>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginStart="10dp">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="A. Bin Talha"
+                                        android:fontFamily="@font/outfit_semi_bold"
+                                        android:textSize="13sp"
+                                        android:textColor="@color/black1F"/>
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Developer"
+                                        android:fontFamily="@font/outfit_regular"
+                                        android:textSize="11sp"
+                                        android:textColor="#78828A"
+                                        android:layout_marginTop="1dp"/>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <!-- Dev 4 -->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginStart="8dp">
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="38dp"
+                                    android:layout_height="38dp"
+                                    app:cardCornerRadius="19dp"
+                                    app:cardElevation="0dp"
+                                    app:strokeWidth="0dp"
+                                    app:cardBackgroundColor="#F3F4F6">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="MJ"
+                                        android:fontFamily="@font/outfit_semi_bold"
+                                        android:textSize="12sp"
+                                        android:textColor="#4B5563"
+                                        android:layout_gravity="center"/>
+                                </com.google.android.material.card.MaterialCardView>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginStart="10dp">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Mujaiq"
+                                        android:fontFamily="@font/outfit_semi_bold"
+                                        android:textSize="13sp"
+                                        android:textColor="@color/black1F"/>
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Frontend Developer"
+                                        android:fontFamily="@font/outfit_regular"
+                                        android:textSize="11sp"
+                                        android:textColor="#78828A"
+                                        android:layout_marginTop="1dp"/>
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#F9FAFB"/>
+
+                        <!-- Row 3 -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2"
+                            android:paddingVertical="8dp">
+
+                            <!-- Dev 5 -->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginEnd="8dp">
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="38dp"
+                                    android:layout_height="38dp"
+                                    app:cardCornerRadius="19dp"
+                                    app:cardElevation="0dp"
+                                    app:strokeWidth="0dp"
+                                    app:cardBackgroundColor="#F3F4F6">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="FA"
+                                        android:fontFamily="@font/outfit_semi_bold"
+                                        android:textSize="12sp"
+                                        android:textColor="#4B5563"
+                                        android:layout_gravity="center"/>
+                                </com.google.android.material.card.MaterialCardView>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginStart="10dp">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Faham Abdullah"
+                                        android:fontFamily="@font/outfit_semi_bold"
+                                        android:textSize="13sp"
+                                        android:textColor="@color/black1F"/>
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Developer"
+                                        android:fontFamily="@font/outfit_regular"
+                                        android:textSize="11sp"
+                                        android:textColor="#78828A"
+                                        android:layout_marginTop="1dp"/>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <!-- Dev 6 -->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginStart="8dp">
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="38dp"
+                                    android:layout_height="38dp"
+                                    app:cardCornerRadius="19dp"
+                                    app:cardElevation="0dp"
+                                    app:strokeWidth="0dp"
+                                    app:cardBackgroundColor="#F3F4F6">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="YS"
+                                        android:fontFamily="@font/outfit_semi_bold"
+                                        android:textSize="12sp"
+                                        android:textColor="#4B5563"
+                                        android:layout_gravity="center"/>
+                                </com.google.android.material.card.MaterialCardView>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginStart="10dp">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Yousuf"
+                                        android:fontFamily="@font/outfit_semi_bold"
+                                        android:textSize="13sp"
+                                        android:textColor="@color/black1F"/>
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Infrastructure"
+                                        android:fontFamily="@font/outfit_regular"
+                                        android:textSize="11sp"
+                                        android:textColor="#78828A"
+                                        android:layout_marginTop="1dp"/>
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#F9FAFB"/>
+
+                        <!-- Row 4 -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2"
+                            android:paddingVertical="8dp">
+
+                            <!-- Dev 7 -->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginEnd="8dp">
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="38dp"
+                                    android:layout_height="38dp"
+                                    app:cardCornerRadius="19dp"
+                                    app:cardElevation="0dp"
+                                    app:strokeWidth="0dp"
+                                    app:cardBackgroundColor="#F3F4F6">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="AS"
+                                        android:fontFamily="@font/outfit_semi_bold"
+                                        android:textSize="12sp"
+                                        android:textColor="#4B5563"
+                                        android:layout_gravity="center"/>
+                                </com.google.android.material.card.MaterialCardView>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginStart="10dp">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Ahmed Sambil"
+                                        android:fontFamily="@font/outfit_semi_bold"
+                                        android:textSize="13sp"
+                                        android:textColor="@color/black1F"/>
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="App Developer"
+                                        android:fontFamily="@font/outfit_regular"
+                                        android:textSize="11sp"
+                                        android:textColor="#78828A"
+                                        android:layout_marginTop="1dp"/>
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <!-- Dev 8 -->
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginStart="8dp">
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="38dp"
+                                    android:layout_height="38dp"
+                                    app:cardCornerRadius="19dp"
+                                    app:cardElevation="0dp"
+                                    app:strokeWidth="0dp"
+                                    app:cardBackgroundColor="#F3F4F6">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="FI"
+                                        android:fontFamily="@font/outfit_semi_bold"
+                                        android:textSize="12sp"
+                                        android:textColor="#4B5563"
+                                        android:layout_gravity="center"/>
+                                </com.google.android.material.card.MaterialCardView>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginStart="10dp">
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Farzana Islam"
+                                        android:fontFamily="@font/outfit_semi_bold"
+                                        android:textSize="13sp"
+                                        android:textColor="@color/black1F"/>
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Support Assistant"
+                                        android:fontFamily="@font/outfit_regular"
+                                        android:textSize="11sp"
+                                        android:textColor="#78828A"
+                                        android:layout_marginTop="1dp"/>
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
