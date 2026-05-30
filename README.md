@@ -96,7 +96,7 @@ PipraPay-App sends two distinct types of requests to your configured webhook URL
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/PipraPay.git
+   git clone https://github.com/SHAJON-404/PipraPay-App.git
    ```
 2. Open the `PipraPay-App` folder in Android Studio.
 3. Allow Gradle synchronization and dependencies download.
@@ -126,3 +126,10 @@ PipraPay-App sends two distinct types of requests to your configured webhook URL
 This application is a rewritten and optimized version of the original **[PipraPay-V2-App](https://github.com/PipraPay/PipraPay-V2-App.git)** repository.
 
 We would like to express our deepest gratitude and appreciation to the original developers of the PipraPay-V2-App project. Their open-source contribution and foundational architecture served as the key blueprint for making this modern rewrite possible. Thank you!
+
+---
+
+## 📄 License
+
+This project is licensed under the **GNU Affero General Public License v3 (AGPL-3.0)** — see the [LICENSE](LICENSE) file for details. This is the same open-source copyleft license used by the original source repository.
+
